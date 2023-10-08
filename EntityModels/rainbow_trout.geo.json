@@ -7,13 +7,13 @@
 				"texture_width": 64,
 				"texture_height": 64,
 				"visible_bounds_width": 3,
-				"visible_bounds_height": 1.5,
-				"visible_bounds_offset": [0, 0.25, 0]
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
 			},
 			"bones": [
 				{
 					"name": "full",
-					"pivot": [0, 0, 0]
+					"pivot": [0, 3, 0]
 				},
 				{
 					"name": "body",
@@ -421,7 +421,7 @@
 				{
 					"name": "tail_back",
 					"parent": "tail",
-					"pivot": [-0.075, 2.84941, 9.12231],
+					"pivot": [0, 3, 4.25],
 					"cubes": [
 						{
 							"origin": [-0.5, 1.5, 9],

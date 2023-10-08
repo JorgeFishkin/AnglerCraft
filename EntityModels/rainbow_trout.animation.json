@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.model.idle": {
+		"animation.rainbow_trout.idle": {
 			"loop": true,
 			"animation_length": 3,
 			"bones": {
@@ -129,13 +129,13 @@
 							"vector": [0, 0, 0]
 						},
 						"0.84": {
-							"vector": [-0.4, 0, 0]
+							"vector": [0.6, 0, 0]
 						},
 						"1.52": {
 							"vector": [0, 0, 0]
 						},
 						"2.16": {
-							"vector": [0.4, 0, 0]
+							"vector": [-0.6, 0, 0]
 						},
 						"3.0": {
 							"vector": [0, 0, 0]
@@ -157,7 +157,7 @@
 				}
 			}
 		},
-		"animation.model.topwater": {
+		"animation.rainbow_trout.topwater": {
 			"animation_length": 3,
 			"bones": {
 				"full": {

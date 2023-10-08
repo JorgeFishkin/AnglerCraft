@@ -10,6 +10,7 @@
   "authorList": ["JorgeFishkin"],
   "credits": "Created by JorgeFishkin",
   "logoFile": "",
+  "requiredMods": [geckolib3],
   "screenshots": [],
   "dependencies": []
 }

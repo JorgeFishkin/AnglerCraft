@@ -1,14 +1,17 @@
 package io.github.jorge.anglercraft.util.handlers;
 
 import io.github.jorge.anglercraft.init.BlockInit;
+import io.github.jorge.anglercraft.init.EntityInit;
 import io.github.jorge.anglercraft.init.ItemInit;
 import io.github.jorge.anglercraft.util.IHasModel;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
 
 @EventBusSubscriber
 public class RegistryHandler {
@@ -36,5 +39,19 @@ public class RegistryHandler {
                 ((IHasModel)block).registerModels();
             }
         }
+    }
+
+    @SubscribeEvent
+    public void onRegisterEntities(RegistryEvent.Register<EntityEntry> event){
+ 
+    }
+
+    public static void preInitRegistries() {
+        EntityInit.registerEntities();
+        RenderHandler.registerEntityRenders();
+    }
+
+    public static void postInitRegistries() {
+        
     }
 }
