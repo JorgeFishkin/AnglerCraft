@@ -10,10 +10,10 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 public class EntityInit {
     public static void registerEntities(){
         int id = 0;
-        registerEntity("Rainbow Trout", "rainbow_trout", EntityRainbowTrout.class, id++, 8, 11520, 16742817);
+        registerEntity("rainbow_trout", EntityRainbowTrout.class, id++, 8, 11520, 16742817);
     }
-    private static void registerEntity(String name, String idName, Class<? extends Entity> entity, int id, int range, int color1, int color2){
-        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, idName), entity, name, id, AnglerCraft.instance, range, 1, true, color1, color2);
+    private static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1, int color2){
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID + ":" + name), entity, name, id, AnglerCraft.instance, range, 1, true, color1, color2);
     }
     
 }

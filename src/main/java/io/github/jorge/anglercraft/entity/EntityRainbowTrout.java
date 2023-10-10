@@ -1,8 +1,9 @@
 package io.github.jorge.anglercraft.entity;
 
-import net.minecraft.entity.EntityCreature;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.player.EntityPlayer;
+import io.github.jorge.anglercraft.entity.ai.EntityFishSwim;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.world.World;
 
 import software.bernie.geckolib3.core.IAnimatable;
@@ -14,22 +15,20 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class EntityRainbowTrout extends EntityCreature implements IAnimatable, IAnimationTickable {
+public class EntityRainbowTrout extends EntityFishMob implements IAnimatable, IAnimationTickable {
     private AnimationFactory factory = new AnimationFactory(this);
+    //private EntityAILookIdle idle = new EntityAILookIdle(this);
 
-    private static final AnimationBuilder IDLE_ANIM = new AnimationBuilder().addAnimation("animation.rainbow_trout.idle");
-    private static final AnimationBuilder TOPWATER_ANIM = new AnimationBuilder().addAnimation("animation.rainbow_trout.topwater");
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        event.getController().setAnimation(IDLE_ANIM);
-        System.out.println("Entity PlayState Call; Anim: " + IDLE_ANIM.toString());
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rainbow_trout.idle"));
         return PlayState.CONTINUE;
     }
 
     public EntityRainbowTrout(World worldIn) {
         super(worldIn);
-        this.ignoreFrustumCheck = true;
-        this.setSize(0.7F, 1.3F);
+        
+        this.setSize(1F, 0.6F);
     }
 
 
@@ -46,8 +45,19 @@ public class EntityRainbowTrout extends EntityCreature implements IAnimatable, I
 
     @Override
     protected void initEntityAI() {
-        this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        super.initEntityAI();
+
+            //this.tasks.addTask(0, new EntityAILookIdle(this));
+            //this.tasks.addTask(7, new EntityFishSwim(this, 0.5F));
+            this.tasks.addTask(7, new EntityAIWander(this, 0.5F, 1));
+            super.initEntityAI();
+    }
+
+    @Override
+    protected void applyEntityAttributes()
+    {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
     }
 
     @Override
@@ -58,6 +68,16 @@ public class EntityRainbowTrout extends EntityCreature implements IAnimatable, I
     @Override
     public void tick() {
         super.onUpdate();
+    }
+
+    @Override
+    public void onLivingUpdate() {
+        super.onLivingUpdate();
+    }
+
+    @Override
+    public void onEntityUpdate() {
+        super.onEntityUpdate();
     }
     
 }

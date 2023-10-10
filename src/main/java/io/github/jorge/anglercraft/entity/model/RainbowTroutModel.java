@@ -12,7 +12,7 @@ public class RainbowTroutModel extends AnimatedTickingGeoModel<EntityRainbowTrou
 
     @Override
     public ResourceLocation getAnimationFileLocation(EntityRainbowTrout entity) {
-       return new ResourceLocation(Reference.MODID, "animation/rainbow_trout.animation.json");
+       return new ResourceLocation(Reference.MODID, "animations/rainbow_trout.animation.json");
     }
 
     @Override
@@ -25,7 +25,7 @@ public class RainbowTroutModel extends AnimatedTickingGeoModel<EntityRainbowTrou
         return new ResourceLocation(Reference.MODID, "textures/model/entity/trout_rainbow.png");
     }
     
-    @SuppressWarnings({"rawtypes", "unchecked"})
+    /*@SuppressWarnings({"rawtypes", "unchecked"})
     @Override
     public void setLivingAnimations(EntityRainbowTrout entity, Integer uniqueID, AnimationEvent customPredicate) {
         super.setLivingAnimations(entity, uniqueID, customPredicate);
@@ -33,5 +33,7 @@ public class RainbowTroutModel extends AnimatedTickingGeoModel<EntityRainbowTrou
         EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
         head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));
         head.setRotationY(extraData.netHeadYaw * ((float) Math.PI / 180F));
-    }
+    
+
+    }*/
 }
