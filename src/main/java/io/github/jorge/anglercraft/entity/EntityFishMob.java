@@ -10,9 +10,11 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 public class EntityFishMob extends EntityAnimal {
+    public int hunger;
 
     public EntityFishMob(World worldIn) {
         super(worldIn);
+        this.hunger = 50;
         this.ignoreFrustumCheck = true;
         
     }
@@ -30,10 +32,36 @@ public class EntityFishMob extends EntityAnimal {
         return true;
     }
 
+    @Override
     public void onEntityUpdate() {
         int a = this.getAir();
         super.onEntityUpdate();
+        
         checkDrown(a);
+        this.hunger--;
+    }
+
+    @Override
+    public void onLivingUpdate() {
+        super.onLivingUpdate();
+        if(this.isInWater()) {
+                this.motionY = 0D;
+        }
+        
+        
+        
+
+    }
+
+    public boolean isHungry() {
+        if(this.hunger <= 0)
+            return true;
+        return false;
+    }
+
+    public int setHunger(int hunger) {
+        this.hunger = hunger;
+        return this.hunger;
     }
 
     public void checkDrown(int air) {

@@ -21,8 +21,24 @@ public class EntityRainbowTrout extends EntityFishMob implements IAnimatable, IA
 
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rainbow_trout.idle"));
-        return PlayState.CONTINUE;
+        if(this.isHungry()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rainbow_trout.topwater"));
+            System.out.println("Trying eat");
+            this.setHunger(100);
+            return PlayState.CONTINUE;
+        }
+        else if(event.isMoving()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rainbow_trout.swim"));
+            return PlayState.CONTINUE;
+        }
+        else if(!this.isInWater()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rainbow_trout.flop"));
+            return PlayState.CONTINUE;
+        }
+        else {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rainbow_trout.idle"));
+            return PlayState.CONTINUE;
+        }
     }
 
     public EntityRainbowTrout(World worldIn) {
@@ -46,9 +62,9 @@ public class EntityRainbowTrout extends EntityFishMob implements IAnimatable, IA
     @Override
     protected void initEntityAI() {
 
-            //this.tasks.addTask(0, new EntityAILookIdle(this));
+            this.tasks.addTask(0, new EntityAILookIdle(this));
             //this.tasks.addTask(7, new EntityFishSwim(this, 0.5F));
-            this.tasks.addTask(7, new EntityAIWander(this, 0.5F, 1));
+            this.tasks.addTask(7, new EntityFishSwim(this, 1F, 1));
             super.initEntityAI();
     }
 

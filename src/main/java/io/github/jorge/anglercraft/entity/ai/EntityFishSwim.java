@@ -30,14 +30,13 @@ public class EntityFishSwim extends EntityAIBase {
 
     @Override
     public boolean shouldExecute() {
-        System.out.println("Should I swim?");
         if(this.entity.isInWater() || this.entity.isInLava()) {
             if (!this.mustUpdate)
             {
-                if (this.entity.getIdleTime() >= 100)
+                /*if (this.entity.getIdleTime() >= 100)
                 {
                     return false;
-                }
+                }*/
     
                 if (this.entity.getRNG().nextInt(this.executionChance) != 0)
                 {
