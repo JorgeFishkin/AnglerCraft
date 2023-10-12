@@ -1,0 +1,13 @@
+{
+    "variants":
+    {
+        "burning=false,facing=north": {"model": "anglercraft:blocks/hook_forge" },
+        "burning=false,facing=north": {"model": "anglercraft:blocks/hook_forge", "y": 90 },
+        "burning=false,facing=north": {"model": "anglercraft:blocks/hook_forge", "y": 180  },
+        "burning=false,facing=north": {"model": "anglercraft:blocks/hook_forge", "y": 270  },
+        "burning=true,facing=north": {"model": "anglercraft:blocks/hook_forge_lit" },
+        "burning=true,facing=north": {"model": "anglercraft:blocks/hook_forge_lit", "y": 90 },
+        "burning=true,facing=north": {"model": "anglercraft:blocks/hook_forge_lit", "y": 180  },
+        "burning=true,facing=north": {"model": "anglercraft:blocks/hook_forge_lit", "y": 270  }
+    }
+}

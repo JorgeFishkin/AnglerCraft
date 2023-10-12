@@ -1,2 +1,17 @@
-item.hook.name=Hook
+//Containers
+container.hook_forge=Hook Forge
+
+//Entities
 entity.rainbow_trout.name=Rainbow Trout
+
+//Items
+item.hook.name=Hook
+
+//Blocks(tile)
+
+//Machines
+tile.hook_forge.name=Hook Forge
+
+
+
+

@@ -20,7 +20,7 @@ public class AnglerCraft
 {
     private static Logger logger;
 
-    @Instance
+    @Mod.Instance(Reference.MODID)
     public static AnglerCraft instance;
 
     @SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.SERVER)
@@ -39,13 +39,14 @@ public class AnglerCraft
     {
         // some example code
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-        RegistryHandler.postInitRegistries();
+        RegistryHandler.initRegistries();
         System.out.println("GeckoLib is installed: " + Loader.isModLoaded("geckolib"));
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
+        RegistryHandler.postInitRegistries();
         GeckoLib.initialize();
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }

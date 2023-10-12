@@ -8,6 +8,9 @@ public class Reference {
 	
 	public static final String CLIENT = "io.github.jorge.anglercraft.proxy.ClientProxy";
 	public static final String SERVER = "io.github.jorge.anglercraft.proxy.CommonProxy";
+
 	public static final int ENTITY_TROUT_RAINBOW = 100;
+
+	public static final int GUI_HOOK_FORGE = 1;
 	
 }

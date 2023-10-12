@@ -3,7 +3,6 @@ package io.github.jorge.anglercraft.entity;
 import io.github.jorge.anglercraft.entity.ai.EntityFishSwim;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.world.World;
 
 import software.bernie.geckolib3.core.IAnimatable;

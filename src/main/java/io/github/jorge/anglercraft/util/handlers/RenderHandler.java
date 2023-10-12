@@ -2,8 +2,7 @@ package io.github.jorge.anglercraft.util.handlers;
 
 import io.github.jorge.anglercraft.entity.EntityRainbowTrout;
 import io.github.jorge.anglercraft.entity.render.RenderRainbowTrout;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.RenderManager;
+
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.relauncher.Side;

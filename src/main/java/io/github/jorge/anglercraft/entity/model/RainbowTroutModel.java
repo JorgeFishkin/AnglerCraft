@@ -3,10 +3,7 @@ package io.github.jorge.anglercraft.entity.model;
 import io.github.jorge.anglercraft.entity.EntityRainbowTrout;
 import io.github.jorge.anglercraft.util.Reference;
 import net.minecraft.util.ResourceLocation;
-import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
-import software.bernie.geckolib3.core.processor.IBone;
 import software.bernie.geckolib3.model.AnimatedTickingGeoModel;
-import software.bernie.geckolib3.model.provider.data.EntityModelData;
 
 public class RainbowTroutModel extends AnimatedTickingGeoModel<EntityRainbowTrout> {
 
